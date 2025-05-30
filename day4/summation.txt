@@ -1,0 +1,47 @@
+
+echo "Who are you?"
+read name
+echo "Enter Number 1"
+read x
+echo "Enter Number 2"
+read y
+echo "Enter Number 3"
+read z
+sum=$(($x+$y+$z))
+avg=$(($sum/3))
+echo "Hi" $name
+echo "Summation " $sum
+echo "Average " $avg
+
+Exercise read two number from user and print 
+addition,substraction,multiply and division
+
+Who are you?
+Rahul
+Enter Number 1
+20
+Enter Number 2
+30
+Enter Number 3
+40
+Hi Rahul
+Summation  90
+Average  30
+
+ vi prgrm1.sh
+
+ ls
+abc.tsv  abc.txt  prgrm1.sh
+
+ chmod 777 prgrm1.sh
+
+ ls
+abc.tsv  abc.txt  prgrm1.sh
+
+ chmod 777 prgrm1.sh
+
+ ./prgrm1.sh
+Name
+Rahul
+Hi Rahul
+
