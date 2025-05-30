@@ -1,0 +1,6 @@
+@echo off
+set /p birthyear=Enter your birthyear:
+set /a age=%date:~10,4% - %birthyear%
+
+echo your age is %age% years.
+pause
