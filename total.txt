@@ -1,0 +1,173 @@
+q1. get the calender and date
+
+q2. get the student name and marks from the user and then calculate
+output:-
+	Enter the name: sangavi
+	Enter the mark for subject1:80
+	Enter the mark for subject2:90
+	Enter the mark for subject3:70
+	Total
+
+q3.Create calculator with arithmetic operators.
+Output:-
+	Enter the first number: 4
+	Enter the second number: 2
+	Summation: 6
+	Substraction: 2
+	Division: 2
+	Multiplication:8
+	
+q4. Get the days based on the user input
+output:-
+	Enter the number : 5
+	Friday
+	Enter the number : 9
+	Unrecognized number
+	
+q5. Verify whether your user name is correct or not.(use your name as in your input)
+output:-
+	Enter user name:
+	sangavi
+	User name is correct
+	Enter user name:
+	sang
+	User name is incorrect
+
+q6.Output:- 
+	Enter two numbers:
+	7 5 
+	7 is greater than 5
+	
+	Output:- 
+	Enter two numbers:
+	1 9
+	9 is greater than 1
+	
+q7. Create simple calculator using "expr" command same as the question 3
+
+q8.
+
+
+
+
+
+ 
+ :: not a bat file
+ :: this is in putty
+
+
+::q1.
+cal
+
+date
+
+ 
+ :: not a bat file
+ :: this is in putty
+
+
+::q1.
+cal
+
+date
+
+::q2.
+
+vi 1.sh
+
+echo "Enter the name: "
+read name
+echo "Enter the mark for subject1: "
+read sub1
+echo "Enter the mark for subject2: "
+read sub2
+echo "Enter the mark for subject3: "
+read sub3
+
+total=$(($sub1+$sub2+$sub3))
+avg=$(($total/3))
+
+echo "Total: " $total
+echo "Average " $avg
+
+:wq!
+
+chmod 777 1.sh
+
+./1.sh
+
+::q3.
+echo "calculator with arithmetic operators."
+echo "Enter the first number: "
+read num1
+echo "Enter the second number: "
+read num2
+
+add=$(($num1+$num2))
+sub=$(($num1-$num2))
+mul=$(($num1*$num2))
+div=$(($num1/$num2))
+
+
+echo "Summation: " $add
+echo "Substraction: " $sub
+echo "Division: " $div
+echo "Multiplication:" $mul
+
+::q4.
+echo "Enter the number : "
+read number
+case $number in
+	1) echo "Monday";;
+	2) echo "Tuesday";;
+	3) echo "Wednesday";;
+	4) echo "Thursday";;
+	5) echo "Friday";;
+	6) echo "Saturday";;
+	7) echo "Sunday";;
+	*) echo "Unrecognized number";
+esac
+
+
+::q5.	
+echo "Enter user name : "
+read username
+name=$("sangavi")
+if [ $username==$name ]; then
+	echo "User name is correct"
+else 
+	echo "User name is incorrect"
+fi
+
+
+::q6.	
+echo "Enter two numbers : "
+read num1 num2
+
+
+if ["$num1" -gt "$num2"]; 
+then
+	echo $num1 " is greater than " $num2
+else
+	echo $num2 " is less than " $num1
+fi
+
+::q7.
+echo "calculator with arithmetic operators."
+echo "Enter the first number: "
+read num1
+echo "Enter the second number: "
+read num2
+
+a='expr $num1+$num2'
+echo "Summation: " $a
+
+
+
+
+
+
+
+
+
+    
