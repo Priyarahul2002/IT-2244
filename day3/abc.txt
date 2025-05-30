@@ -1,0 +1,89 @@
+vi abc.tsv
+
+ls -a
+
+cut -d" " -f3 abc.tsv
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+cut -d\t -f3 abc.tsv
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+cut -d\t -f1 abc.tsv
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+cut -d' ' -f1 abc.tsv
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+head -n2 abc.tsv
+ff      22      55      66
+jj      45      67      78
+
+tail -n2 abc.tsv
+hs      45      67      89
+kj      34      56      78
+
+head abc.tsv
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+head -8 abc.tsv
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+tail -8 abc.tsv
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+head -2 abc.tsv
+ff      22      55      66
+jj      45      67      78
+
+head -n8 abc.tsv | tail
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+tail -n8 abc.tsv | head
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+head -n3 abc.tsv | tail
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+
+awk {print} abc.tsv
+ff      22      55      66
+jj      45      67      78
+hs      45      67      89
+kj      34      56      78
+
+awk '{print 3}' abc.tsv
+3
+3
+3
+3
+
+wc -l abc.tsv
+4 abc.tsv

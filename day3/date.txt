@@ -1,0 +1,8 @@
+@echo off
+echo current date:%date%
+echo Day:%date:~0,3%
+echo date:%date:~4,2%
+echo Month of the date:%date:~7,2%
+echo Year of the date:%date:~10,4%
+
+pause
