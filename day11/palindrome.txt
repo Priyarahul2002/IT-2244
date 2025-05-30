@@ -1,0 +1,33 @@
+Q1>check whether the string is palindrome or not
+
+echo "Enter the word: "
+read word
+
+len=$(expr length "$word")  # Find length using expr
+i=1
+j=$len
+flag=0
+
+while [ $i -lt $j ]
+do
+    # Get character at position i
+    a=$(echo "$word" | cut -c $i)
+    # Get character at position j
+    b=$(echo "$word" | cut -c $j)
+
+    if [ "$a" != "$b" ]
+    then
+        flag=1
+        break
+    fi
+
+    i=$(($i + 1))
+    j=$(($j - 1))
+done
+
+if [ $flag -eq 0 ]
+then
+    echo "The word is a Palindrome"
+else
+    echo "The word is NOT a Palindrome"
+fi
