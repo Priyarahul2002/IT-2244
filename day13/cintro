@@ -1,0 +1,536 @@
+//1.
+vi first.c
+//press i 
+//copy=right click ->escape then type:wq!
+
+#include<stdio.h>
+int main()
+{
+  printf("Hello world!\n");
+  return 0;
+}
+
+gcc first.c -o first
+./first
+
+
+//2.
+//variables
+vi second.c
+
+int age;
+age=23;
+int age =23;
+#include<stdio.h>
+int main()
+{
+	int age=25;
+	printf(age);
+	//printf("%d",age);
+}
+
+gcc second.c -o second
+./second
+
+%d /%i -integers
+%f / %F -float
+%lf -double
+%e -char
+%s -strings
+
+//assign new value for same variable 
+int age=25;
+printf("%d",age);
+
+printf("c programming ");
+
+age=31;
+printf("\nNew age:%d",age);
+
+
+-------
+#include<stdio.h>
+int main()
+{
+	int firstNumber=25;
+	printf("first number:%d",firstNumber);
+	
+	int secondNumber=firstNumber;
+	printf("second number:%d",secondNumber);
+	return 0;
+}
+
+
+#include<stdio.h>
+int main(){
+	int firstNumber,secondNumber=25;
+	return 0;
+}
+
+//data types
+#include<stdio.h>
+int main(){
+	int age=10;
+	printf("%d",age);
+	printf("\nsize: %zu", sizeof(age));
+	
+	double number=12.45;
+	printf("\n%lf",number);  //12.450000
+	printf("\n%.2lf",number);  //12.45
+	
+	float number1=10.9f;
+	printf("\n%f",number1);    //output-10.900000
+	printf("\n%.1f",number1);  //output-10.9
+	
+	char character ='z';
+	printf("\n%c",character);
+	printf("\n%d",character);
+	return 0;
+}
+
+--------------
+#include<stdio.h>
+int main()
+{
+	int age;
+	printf("Enter your age: ");
+	scanf("%d", &age);
+	printf("Age=%d",age);
+	
+	double number;
+	
+	printf("Enter double input:");
+	scanf("%lf", &number);
+	printf("\nYour double input is:%lf",number);
+	
+	char alpha;
+	printf("Enter char input: ");
+	scanf("%e", &alpha);
+	printf("\nYour char input is:%e",alpha);
+	
+	return 0;
+}
+
+arithmetic operator
++
+-
+*
+/
+%
+
+
+#include<stdio.h>
+int main()
+{
+	int num1;
+	printf("Enter num1: ");
+	scanf("%d", &num1);
+	
+	int num2;
+	printf("Enter num2: ");
+	scanf("%d", &num2);
+	
+	int add=num1+num2;
+	int sub=num1-num2;
+	int mul=num1*num2;
+	int div=num1/num2;
+	
+	printf("\nAddition: %d",add);
+	printf("\nsubtraction: %d",sub);
+	printf("\nmultiplication: %d",mul);
+	printf("\ndivision: %d",div);
+	return 0;
+}
+
+
+
+if(condition){
+	//statement;
+}
+else{
+	//statement;
+}
+
+//Enter your age and verify your eligible or not for election voting
+q1>
+#include<stdio.h>
+int main()
+{
+int age;
+printf("Enter your age ");
+scanf("%d",&age);
+
+
+if(age>20){
+	printf("\nYou are eligible");
+}
+else{
+	printf("\nYou are not eligible");
+}
+return 0;
+}
+
+q2>
+//ternary operator
+test_condition ? expression1 : expression2;
+
+#include<stdio.h>
+int main(){
+
+int age;
+printf("Enter your age ");
+scanf("%d",&age);
+
+(age>20) ? printf("\nYou are eligible"):	printf("\nYou are not eligible");
+	
+	return 0;
+}
+gcc first.c -o first
+./first
+
+#include<stdio.h>
+int main(){
+int value;
+printf("Enter the value ");
+scanf("%d",&value);
+
+switch(value){
+	case 1:
+	printf("Today is monday");
+	break;
+	case 2:
+	printf("Today is tuesday");
+	break;
+	case 3:
+	printf("Today is wednesday");
+	break;
+	case 4:
+	printf("Today is thursday");
+	break;
+	case 5:
+	printf("Today is friday");
+	break;
+	default:
+	printf("weekend or invalid");
+}
+}
+
+Q4>
+Write a code for small astrology based on your life path number for that get date of birth from user then calculate life path number.
+(use switch case)
+Example:-
+	calculation for life path number:
+		a=date%10
+		b=date/10
+		c=a+b 
+	if life path number:
+		1:Lucky
+		2:Carefully do your work
+		3:Stronger
+		4:Happy
+		5:Can get help
+		6:Doubt
+		7:Sad
+		8:Like
+		9:Courage
+		
+
+
+#include<stdio.h>
+int main(){
+int date;
+printf("Enter the date ");
+scanf("%d",&date);
+
+int a,b,c;
+
+ a=date % 10;
+		b=date/10;
+		c=a+b;
+		
+
+
+switch(c){
+	case 1:
+	printf("Lucky");
+	break;
+	case 2:
+	printf("Carefully do your work");
+	break;
+	case 3:
+	printf("Stronger");
+	break;
+	case 4:
+	printf("Happy");
+	break;
+	case 5:
+	printf("Can get help");
+	break;
+	case 6:
+	printf("Doubt");
+	break;
+	case 7:
+	printf("Sad");
+	break;
+	case 8:
+	printf("Like");
+	break;
+	case 9:
+	printf("Courage");
+	break;
+	default:
+	printf("unrecognized");
+}
+}
+
+Q5>Give list of numbers then calculate the summmation 
+and multiplication using for loop
+Example:
+1 2 3 4 5
+	summmation=15
+	multiplication=120
+
+for (expression 1; expression 2; expression 3) {
+  // code block to be executed
+}
+
+#include<stdio.h>
+int main(){
+int i;
+int sum=0;
+int mul=1;
+
+for(i=1;i<=5;i++){
+	sum =sum+i;
+	mul =mul*i;
+}
+printf("/nsummmation: %d",sum);
+printf("/nmultiplication: %d",mul);
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	#include <stdio.h>
+
+int main() {
+    int n, i;
+    long long summation = 0, multiplication = 1;
+
+    
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    int numbers[n];
+
+    
+    printf("Enter %d numbers: \n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &numbers[i]);
+    }
+
+    
+    for (i = 0; i < n; i++) {
+        summation += numbers[i];
+        multiplication *= numbers[i];
+    }
+
+    
+    printf("Summation = %lld\n", summation);
+    printf("Multiplication = %lld\n", multiplication);
+
+    return 0;
+}
+
+	
+Q6>print the integers from 1 to 10 using while loop
+
+while (condition) {
+  // code block to be executed
+}
+
+
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+
+    
+    while (i <= 10) {
+        printf("\n%d \n", i);
+        i++; 
+    }
+
+    return 0;
+}
+
+
+Q7>write c program to print fibonacci series up to specified number of terms.
+program should take the number of terms as input from the user
+ and display the corresponding fibonacci sequences
+
+#include <stdio.h>
+
+int main() {
+    int n, a = 0, b = 1, c;
+
+    
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+   
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a);
+        c = a + b;  
+        a = b;      
+        b = c;      
+    }
+
+    printf("\n");  
+    return 0;
+}
+
+
+
+//method2
+#include <stdio.h>
+
+int main() {
+    int terms, i;
+    long long first = 0, second = 1, next;
+
+    
+    printf("Enter the number of terms: ");
+    scanf("%d", &terms);
+
+    
+    printf("Fibonacci Series up to %d terms: \n", terms);
+    
+    
+    if (terms >= 1) printf("%lld ", first);
+    if (terms >= 2) printf("%lld ", second);
+
+    
+    for (i = 3; i <= terms; i++) {
+        next = first + second;
+        printf("%lld ", next);
+        
+       
+        first = second;
+        second = next;
+    }
+
+    printf("\n");
+    return 0;
+}
+
+Q8>calculate the factorial of a given non-negative integer
+#include <stdio.h>
+
+int main() {
+    int n, i;
+	int factorial = 1;
+
+   
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &n);
+
+    
+    if (n < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+        return 1; 
+    }
+  
+    for (i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+  
+    printf("Factorial of %d = %lld\n", n, factorial);
+
+    return 0;
+}
+//method2
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long factorial = 1;
+
+    
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &n);
+
+    
+    if (n < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+        return 1;  
+    }
+
+    
+    for (int i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+
+   
+    printf("Factorial of %d = %lld\n", n, factorial);
+
+    return 0;
+}
+
+
+
+Q9>accepts 2 strings as input from user.
+concatenates the 3 strings display the concatenated result
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100], str2[100], str3[] = " (This is a third string)";
+    char result[300];  
+
+    
+    printf("Enter the first string: ");
+    fgets(str1, sizeof(str1), stdin);  
+    str1[strcspn(str1, "\n")] = '\0';  
+
+    printf("Enter the second string: ");
+    fgets(str2, sizeof(str2), stdin);  
+    str2[strcspn(str2, "\n")] = '\0';  
+
+    
+    strcpy(result, str1); 
+    strcat(result, str2); 
+    strcat(result, str3);  
+
+   
+    printf("The concatenated result is: %s\n", result);
+
+    return 0;
+}
+
+
+
+Q10>c program that takes a binary number as input and converts it to its decimal equivalent
+
+Q11>accepts an array of integers from the user,
+finds and displays maximum and minimum values in the array 
+
+
+
