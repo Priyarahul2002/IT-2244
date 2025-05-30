@@ -1,0 +1,252 @@
+//data
+ID,Name,Age,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+
+Last login: Mon Mar 24 11:49:02 2025 from 172.16.140.10
+[2021ict91@fedora ~]$ vi data.csv
+
+[2021ict91@fedora ~]$ more data.csv
+ID,Name,Age,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+
+[2021ict91@fedora ~]$ less data.csv
+ID,Name,Age,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+
+[2021ict91@fedora ~]$ grep 'Engineering' data.csv
+102,Bob,25,50000,Engineering
+105,Eve,28,60000,Engineering
+108,Hank,32,68000,Engineering
+
+[2021ict91@fedora ~]$ head data.csv
+ID,Name,Age,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+
+[2021ict91@fedora ~]$ head -5 data.csv
+ID,Name,Age,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+
+[2021ict91@fedora ~]$ tail -3 data.csv
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+
+[2021ict91@fedora ~]$ awk -F, '{print NF;exit}' data.csv
+5
+
+[2021ict91@fedora ~]$ awk -F, '{print $3}' data.csv
+Age
+30
+25
+5
+40
+28
+38
+27
+32
+29
+31
+
+[2021ict91@fedora ~]$ cut -d, -f3 data.csv
+Age
+30
+25
+5
+40
+28
+38
+27
+32
+29
+31
+
+[2021ict91@fedora ~]$ awk 'NR==7' data.csv
+106,Frank,38,75000,HR
+
+[2021ict91@fedora ~]$ tail -3 data.csv
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+
+[2021ict91@fedora ~]$ head -n7 data.csv | tail -n1
+106,Frank,38,75000,HR
+
+[2021ict91@fedora ~]$ head -n2 data.csv | tail -n1
+101,Alice,30,70000,Data Science
+
+[2021ict91@fedora ~]$ awk -F, '{print $2, $3}' data.csv
+Name Age
+Alice 30
+Bob 25
+Charlie 5
+David 40
+Eve 28
+Frank 38
+Grace 27
+Hank 32
+Ivy 29
+Jack 31
+
+[2021ict91@fedora ~]$ sort -t, -k4 -n data.csv
+ID,Name,Age,Salary,Department
+102,Bob,25,50000,Engineering
+105,Eve,28,60000,Engineering
+109,Ivy,29,62000,Data Science
+108,Hank,32,68000,Engineering
+101,Alice,30,70000,Data Science
+110,Jack,31,71000,HR
+107,Grace,27,72000,Data Science
+106,Frank,38,75000,HR
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+
+[2021ict91@fedora ~]$ awk -F, '{print $4}' data.csv
+Salary
+70000
+50000
+80000
+90000
+60000
+75000
+72000
+68000
+62000
+71000
+
+[2021ict91@fedora ~]$ awk -F, '{print $4}' data.csv | sort
+50000
+60000
+62000
+68000
+70000
+71000
+72000
+75000
+80000
+90000
+Salary
+
+[2021ict91@fedora ~]$ sort -t',' -k3,3nr data.csv
+104,David,40,90000,HR
+106,Frank,38,75000,HR
+108,Hank,32,68000,Engineering
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+107,Grace,27,72000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+ID,Name,Age,Salary,Department
+
+[2021ict91@fedora ~]$ sort -t',' -k4,4n data.csv
+ID,Name,Age,Salary,Department
+102,Bob,25,50000,Engineering
+105,Eve,28,60000,Engineering
+109,Ivy,29,62000,Data Science
+108,Hank,32,68000,Engineering
+101,Alice,30,70000,Data Science
+110,Jack,31,71000,HR
+107,Grace,27,72000,Data Science
+106,Frank,38,75000,HR
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+
+[2021ict91@fedora ~]$ sort -t',' -k4,4nr data.csv
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+102,Bob,25,50000,Engineering
+ID,Name,Age,Salary,Department
+
+[2021ict91@fedora ~]$ sort -t',' -k4,4 -r data.csv
+ID,Name,Age,Salary,Department
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+102,Bob,25,50000,Engineering
+
+[2021ict91@fedora ~]$ sort -t',' -k2,2 -k4,4 -r data.csv
+ID,Name,Age,Salary,Department
+110,Jack,31,71000,HR
+109,Ivy,29,62000,Data Science
+108,Hank,32,68000,Engineering
+107,Grace,27,72000,Data Science
+106,Frank,38,75000,HR
+105,Eve,28,60000,Engineering
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+102,Bob,25,50000,Engineering
+101,Alice,30,70000,Data Science
+
+[2021ict91@fedora ~]$ sort -t',' -k5,5 -k4,4 -r data.csv
+104,David,40,90000,HR
+106,Frank,38,75000,HR
+110,Jack,31,71000,HR
+108,Hank,32,68000,Engineering
+105,Eve,28,60000,Engineering
+102,Bob,25,50000,Engineering
+ID,Name,Age,Salary,Department
+103,Charlie,5,80000,Data Science
+107,Grace,27,72000,Data Science
+101,Alice,30,70000,Data Science
+109,Ivy,29,62000,Data Science
+
+
+
+
+
+
+
+
+
