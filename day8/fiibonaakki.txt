@@ -1,0 +1,100 @@
+
+Q1>Fibonacci series
+output-first 10 fibonacci numbers:
+0 1 1 2 3 5 8 13 21 34
+
+Q2>Factorial
+output-factorial of 5 is:120
+
+Q3>Multiples of 3 between 1 and 50:
+3 6 9 12 15 18...
+
+
+Answers
+Q1>
+@echo off
+echo "Enter the number:"
+read num
+
+a=0
+b=1
+
+x=$(($a+$b))
+for((i=0;i<num;i++))
+do
+ echo $a
+ echo " "
+ 
+ c=$(($a+$b))
+ a=$b 
+ b=$c
+done
+
+output:-
+Enter the number:
+10
+0
+
+1
+
+1
+
+2
+
+3
+
+5
+
+8
+
+13
+
+21
+
+34
+------
+
+Q2>@echo off
+
+echo "Enter the number:"
+read num 
+fact=1
+for((i=1;i<=$num;i++))
+do
+   fact =$(($fact *$i )) 
+done
+
+echo "Factorial of num is: " $fact 
+
+Q3>
+@echo off
+let i=3
+while [ $i -le 50 ]
+do
+ echo $i 
+i=$(($i+3))
+
+done 
+
+output:-
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+33
+36
+39
+42
+45
+48
+----------
+
+
+
+
