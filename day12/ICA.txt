@@ -1,0 +1,127 @@
+✅ Question 01 – Windows CMD Commands (save as answer1.bat)
+@echo off
+:: Create directories on Desktop
+cd Desktop
+mkdir CSC2244 Marks Exam
+pause
+
+:: Create subdirectories inside CSC2244
+cd CSC2244
+mkdir practical theory "exam papers"
+
+:: Create sample files in each subdirectory
+cd practical
+echo Practical Text File > practical.txt
+echo. > practical.docx
+echo. > practical.pptx
+
+cd ..\theory
+echo Theory Text File > theory.txt
+echo. > theory.docx
+echo. > theory.pptx
+
+cd ..\"exam papers"
+echo Exam Text File > exam.txt
+echo. > exam.docx
+echo. > exam.pptx
+
+:: Create Excel files and move them
+cd %USERPROFILE%\Desktop
+echo. > "Icae Marks.xlsx"
+echo. > "Final Exam Marks.xlsx"
+move "Icae Marks.xlsx" Marks
+move "Final Exam Marks.xlsx" Marks
+
+:: Copy Marks directory into Exam and hide Exam
+xcopy /E /I Marks Exam\Marks
+attrib +h Exam
+
+
+//output
+CSC2244 Marks Exam
+Press any key to continue . . .
+Marks
+Exam\Marks
+
+
+//Explanation
+This script demonstrates the use of Windows Command Prompt (CMD) commands for file and directory management. It covers essential concepts like navigating directories (`cd`), creating directories (`mkdir`), creating files (`echo`), moving files (`move`), copying directories (`xcopy`), and modifying file attributes (`attrib`). By automating tasks, it highlights how batch scripting can simplify repetitive operations, such as organizing files, creating folder hierarchies, and managing file visibility. This knowledge is foundational for system administration and automation in Windows environments.
+
+
+
+ ✅ Question 02 – Bash Shell Commands (save as answer2.sh)
+Assuming data.csv is in the same directory and has a header (e.g., Name,GPA):
+# Filter GPA > 3.5
+awk -F, 'NR>1 && $4 > 3.5' data.csv
+
+//output
+Priya   21    Environmentscience  3.7
+Carol   23    Physicalscience     3.99
+David   21    IT                  3.98
+Riya    22    Physicalscience     3.6
+Rahman  21    Environmentscience  3.7
+Anna    23    Physicalscience     3.78
+Riyas   21    IT                  3.76
+
+
+
+
+# Calculate average GPA
+awk -F, 'NR>1 {sum+=$4; count++}
+{if (count > 0) print "Average GPA:", sum/count}' data.csv 
+
+
+//output
+Average GPA: 3.511
+
+
+
+
+//sample data
+Name	Age	Department	GPA
+John	22	Physicalscience	3.5
+Priya	21	Environmentscience	3.7
+Meera	22	IT	3.1
+Carol	23	Physicalscience	3.99
+David	21	IT	3.98
+Riya	22	Physicalscience	3.6
+Rahman	21	Environmentscience	3.7
+Rose	22	IT	2
+Anna	23	Physicalscience	3.78
+Riyas	21	IT	3.76
+
+//Explanation
+This Bash script demonstrates how to use `awk` for filtering and analyzing structured data in a CSV file. It effectively extracts rows based on conditions (GPA > 3.5) and computes the average GPA, showcasing the power of shell scripting for data processing and automation in Linux environments.
+
+
+
+✅ Question 03 – Bash Shell Script (save as answer3.sh)
+# Read two strings
+echo "Enter the String 1: "
+read str1
+echo "Enter the String 2: "
+read str2
+
+# Get lengths
+len1=${#str1}
+len2=${#str2}
+
+# Compare and print
+if [ $len1 -gt $len2 ];then
+ echo "$str1 is larger than str2"
+elif [ $len2 -gt $len1 ];then
+ echo "$str2 is larger than str1"
+else
+ echo "Both strings are of equal length"
+fi   
+
+
+//output
+Enter the String 1:
+apple
+Enter the String 2:
+banana
+banana is larger than str1
+
+//Explanation
+The script efficiently compares the lengths of two strings entered by the user, providing clear feedback. It demonstrates basic user input, string manipulation, and conditional logic in Bash scripting.
