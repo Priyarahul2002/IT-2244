@@ -1,0 +1,8 @@
+@echo off
+echo Username:%USERNAME%
+echo Windows version:
+ver
+echo Current date:%DATE%
+echo Time:%TIME%
+
+pause
