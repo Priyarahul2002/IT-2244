@@ -1,0 +1,150 @@
+//1.
+vi first.c
+//press i 
+//copy=right click ->escape then type:wq!
+
+#include<stdio.h>
+int main()
+{
+  printf("Hello world!\n");
+  return 0;
+}
+
+gcc first.c -o first
+./first
+
+
+//2.
+//variables
+vi second.c
+
+int age;
+age=23;
+int age =23;
+#include<stdio.h>
+int main()
+{
+	int age=25;
+	printf(age);
+	//printf("%d",age);
+}
+
+gcc second.c -o second
+./second
+
+%d /%i -integers
+%f / %F -float
+%lf -double
+%e -char
+%s -strings
+
+//assign new value for same variable 
+int age=25;
+printf("%d",age);
+
+printf("c programming ");
+
+age=31;
+printf("\nNew age:%d",age);
+
+
+-------
+#include<stdio.h>
+int main()
+{
+	int firstNumber=25;
+	printf("first number:%d",firstNumber);
+	
+	int secondNumber=firstNumber;
+	printf("second number:%d",secondNumber);
+	return 0;
+}
+
+
+#include<stdio.h>
+int main(){
+	int firstNumber,secondNumber=25;
+	return 0;
+}
+
+//data types
+#include<stdio.h>
+int main(){
+	int age=10;
+	printf("%d",age);
+	printf("size: %zu", sizeof(age));
+	
+	double number=12.45;
+	printf("%lf",number);  //12.450000
+	printf("%.2lf",number);  //12.45
+	
+	float number1=10.9f;
+	printf("%f",number1);    //output-10.900000
+	printf("%.lf",number1);  //output-10.9
+	
+	char character ='z';
+	printf("%c",character);
+	printf("\n%d",character);
+	return 0;
+}
+
+--------------
+#include<stdio.h>
+int main()
+{
+	int age;
+	printf("Enter your age: ");
+	scanf("%d", &age);
+	printf("Age=%d",age);
+	
+	double number;
+	char alpha;
+	printf("Enter double input:");
+	scanf("%lf", $number);
+	printf("\nYour double input is:%lf",number);
+	
+	printf("Enter char input: ");
+	scanf("%c", $alpha);
+	printf("\nYour double input is:%lf",alpha);
+	
+	return 0;
+}
+
+arithmetic operator
++
+-
+*
+/
+%
+
+
+#include<stdio.h>
+int main()
+{
+	int num1;
+	printf("Enter num1: ");
+	scanf("%d", &num1);
+	
+	int num2;
+	printf("Enter num2: ");
+	scanf("%d", &num2);
+	
+	int add=num1+num2;
+	int sub=num1-num2;
+	int mul=num1*num2;
+	int div=num1/num2;
+	
+	printf("\nAddition: %d",add);
+	printf("\nsubtraction: %d",sub);
+	printf("\nmultiplication: %d",mul);
+	printf("\ndivision: %d",div);
+	return 0;
+}
+
+
+
+
+
+
+
+
