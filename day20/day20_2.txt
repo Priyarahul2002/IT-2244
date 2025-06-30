@@ -1,0 +1,59 @@
+Exercise
+1.read two input from user(//parent process)
+name:
+reg no:
+age:
+
+2.print the output from the child(/child process)
+name:abc
+reg no:2022/ict/01
+age:25
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+
+int main() {
+    char name[50], reg_no[20];
+    int age;
+    
+    printf("Enter name: ");
+    fgets(name, sizeof(name), stdin);
+    
+    printf("Enter reg no: ");
+    fgets(reg_no, sizeof(reg_no), stdin);
+    
+    printf("Enter age: ");
+    scanf("%d", &age);
+    
+    pid_t pid = fork();  // Create child process
+    
+    if (pid < 0) {
+        printf("Fork failed.\n");
+        return 1;
+    }
+    
+    if (pid == 0) {  // Child process
+        printf("\n--- Output from Child Process ---\n");
+        printf("Name: %s", name);
+        printf("Reg No: %s", reg_no);
+        printf("Age: %d\n", age);
+    } else {  // Parent process
+        wait(NULL);  // Wait for child to finish
+    }
+    
+    return 0;
+}
+
+
+output=>
+Enter name: raj
+Enter reg no: 2021/ict/91
+Enter age: 23
+
+--- Output from Child Process ---
+Name: raj
+Reg No: 2021/ict/91
+Age: 23
